@@ -1,13 +1,15 @@
+import random
 import logging
 from http import HTTPStatus
+from typing import Dict
+
 from fastapi import FastAPI
 
-from app.routers import order
+from .routers import order
 
-logging.basicConfig(encoding='utf-8', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-logger = logging.getLogger(__name__)
-
+logging.basicConfig(encoding='utf-8', level=logging.INFO,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__file__)
 
 app = FastAPI(
     title='Your Fruit Self Service',
@@ -20,9 +22,9 @@ app.include_router(order.router)
 
 
 @app.get('/', status_code=HTTPStatus.OK)
-async def root():
+async def root() -> Dict[str, str]:
     """
     Endpoint for basic connectivity test.
     """
     logger.info('root called')
-    return {'message': 'I am alive'}
+    return {'message': 'I am still alive'}
