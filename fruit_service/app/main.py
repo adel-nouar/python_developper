@@ -4,9 +4,9 @@ from fastapi import FastAPI
 
 from app.routers import order
 
-logging.basicConfig(encoding='utf-8', level=logging.WARNING, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(encoding='utf-8', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-logger = logging.getLogger(__file__)
+logger = logging.getLogger(__name__)
 
 
 app = FastAPI(
