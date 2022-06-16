@@ -1,4 +1,3 @@
-import random
 import logging
 from http import HTTPStatus
 from typing import Dict
@@ -27,4 +26,4 @@ async def root() -> Dict[str, str]:
     Endpoint for basic connectivity test.
     """
     logger.info('root called')
-    return {'message': 'I am still alive'}
+    return {'message': 'I am alive'}
