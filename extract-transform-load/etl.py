@@ -50,7 +50,10 @@ def transform(rows_to_process: List) -> Tuple[List, List]:
     transformation_map = {
         '🍎': 'apple',
         '🍐': 'pear',
-        '🍌': 'banana'
+        '🍌': 'banana',
+        'apple': 'apple',
+        'banana': 'banana',
+        'pear' : 'pear'
     }
 
     transformed_rows = []
