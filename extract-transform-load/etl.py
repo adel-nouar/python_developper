@@ -46,7 +46,7 @@ def extract(db_connect: MySqlConnector, last_read: datetime):
     return new_rows
 
 
-def transform(rows_to_process: List) -> Tuple[List, List]:
+def transform(rows_to_process: List[str]) -> Tuple[List[str], List[str]]:
     transformation_map = {
         '🍎': 'apple',
         '🍐': 'pear',
